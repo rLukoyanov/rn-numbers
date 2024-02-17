@@ -4,7 +4,7 @@ import { PramiryButton } from "../components/PramiryButton";
 export const StartGameScreen = () => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput />
+      <TextInput style={styles.numberInput} maxLength={2} />
       <PramiryButton>Reset</PramiryButton>
       <PramiryButton>Confirm</PramiryButton>
     </View>
@@ -23,5 +23,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 5 },
     shadowRadius: 6,
     shadowOpacity: 0.5,
+  },
+  numberInput: {
+    height: 50,
+    width: 50,
+    fontSize: 32,
+    borderBottomColor: "#ddb52f",
+    borderBottomWidth: 2,
+    color: "#ddb52f",
+    marginVertical: 8,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
