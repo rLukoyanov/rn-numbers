@@ -1,7 +1,17 @@
 import { StyleSheet, TextInput, View } from "react-native";
 import { PramiryButton } from "../components/PramiryButton";
+import { useState } from "react";
 
 export const StartGameScreen = () => {
+  const [enteredNumber, setEnteredNumber] = useState("");
+
+  const numberInputHandler = (enteredText) => {
+    setEnteredNumber(enteredText);
+  };
+
+  const confirmInputHandler = () => {};
+  const resetInputHandler = () => {};
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -10,13 +20,15 @@ export const StartGameScreen = () => {
         keyboardType="number-pad"
         autoCapitalize="none"
         autoCorrect={false}
+        value={enteredNumber}
+        onChange={numberInputHandler}
       />
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
-          <PramiryButton>Reset</PramiryButton>
+          <PramiryButton onPress={resetInputHandler}>Reset</PramiryButton>
         </View>
         <View style={styles.buttonContainer}>
-          <PramiryButton>Confirm</PramiryButton>
+          <PramiryButton onPress={confirmInputHandler}>Confirm</PramiryButton>
         </View>
       </View>
     </View>
