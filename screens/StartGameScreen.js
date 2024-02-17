@@ -1,6 +1,7 @@
-import { StyleSheet, TextInput, View } from "react-native";
-import { PramiryButton } from "../components/PramiryButton";
 import { useState } from "react";
+import { StyleSheet, TextInput, View, Alert } from "react-native";
+
+import { PramiryButton } from "../components/PramiryButton";
 
 export const StartGameScreen = () => {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -9,8 +10,30 @@ export const StartGameScreen = () => {
     setEnteredNumber(enteredText);
   };
 
-  const confirmInputHandler = () => {};
-  const resetInputHandler = () => {};
+  const confirmInputHandler = () => {
+    const chosenNumber = parseInt(enteredNumber);
+
+    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+      //   showAlert();
+      Alert.alert(
+        "Invalid number",
+        "Number has to be a number beetween 1 to 99",
+        [
+          {
+            text: "Okay",
+            style: "default",
+            onPress: resetInputHandler,
+          },
+        ]
+      );
+      return;
+    }
+
+    console.log("valid number!))");
+  };
+  const resetInputHandler = () => {
+    setEnteredNumber("");
+  };
 
   return (
     <View style={styles.inputContainer}>
