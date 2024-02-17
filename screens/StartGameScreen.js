@@ -4,7 +4,13 @@ import { PramiryButton } from "../components/PramiryButton";
 export const StartGameScreen = () => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput style={styles.numberInput} maxLength={2} />
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
       <PramiryButton>Reset</PramiryButton>
       <PramiryButton>Confirm</PramiryButton>
     </View>
