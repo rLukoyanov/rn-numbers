@@ -11,14 +11,21 @@ export const StartGameScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <PramiryButton>Reset</PramiryButton>
-      <PramiryButton>Confirm</PramiryButton>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
+          <PramiryButton>Reset</PramiryButton>
+        </View>
+        <View style={styles.buttonContainer}>
+          <PramiryButton>Confirm</PramiryButton>
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   inputContainer: {
+    alignItems: "center",
     padding: 16,
     marginTop: 100,
     marginHorizontal: 24,
@@ -40,5 +47,11 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
   },
 });
