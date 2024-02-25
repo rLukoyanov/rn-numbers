@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, TextInput, View, Alert } from "react-native";
 
-import { PramiryButton } from "../components/PramiryButton";
+import { PramiryButton } from "../components/ui/PramiryButton";
 import colors from "../constants/colors";
 
 export const StartGameScreen = ({ onPickedNumber }) => {
