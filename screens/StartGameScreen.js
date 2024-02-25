@@ -2,6 +2,7 @@ import { useState } from "react";
 import { StyleSheet, TextInput, View, Alert } from "react-native";
 
 import { PramiryButton } from "../components/PramiryButton";
+import colors from "../constants/colors";
 
 export const StartGameScreen = ({ onPickedNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginTop: 100,
     marginHorizontal: 24,
-    backgroundColor: "#3e0522",
+    backgroundColor: colors.primary800,
     borderRadius: 9,
     elevation: 4,
     shadowColor: "#000",
@@ -76,9 +77,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     fontSize: 32,
-    borderBottomColor: "#ddb52f",
+    borderBottomColor: colors.accent500,
     borderBottomWidth: 2,
-    color: "#ddb52f",
+    color: colors.accent500,
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
