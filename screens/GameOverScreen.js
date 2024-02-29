@@ -1,5 +1,5 @@
+import { Text } from "react-native";
+
 export const GameOverScreen = () => {
-  return (
-    <div>GameOverScreen</div>
-  )
-}
+  return <Text>GameOverScreen</Text>;
+};
