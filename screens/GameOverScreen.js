@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Title } from "../components/ui/Title";
+import { PramiryButton } from "../components/ui/PramiryButton";
 import colors from "../constants/colors";
 
 export const GameOverScreen = () => {
@@ -12,7 +13,11 @@ export const GameOverScreen = () => {
           source={require("../assets/images/background.jpg")}
         />
       </View>
-      <Text>Your phone needed X rounds to guess the number Y.</Text>
+      <Text style={styles.text}>
+        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
+        guess the number <Text style={styles.highlight}>Y</Text>.
+      </Text>
+      <PramiryButton>Start new Game</PramiryButton>
     </View>
   );
 };
@@ -27,7 +32,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     margin: 36,
   },
-  
+
   image: {
     width: `100%`,
   },
@@ -35,7 +40,18 @@ const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
     padding: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  text: {
+    fontFamily: "open-sans",
+    fontSize: 24,
+    textAlign: "center",
+    marginVertical: 16,
+  },
+  highlight: {
+    color: colors.primary500,
+    fontWeight: 500,
+  },
 });
