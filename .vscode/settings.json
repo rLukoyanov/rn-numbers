@@ -1,0 +1,16 @@
+{
+    "editor.suggest.showWords": true,
+    "editor.suggest.showVariables": true,
+    "editor.suggest.showValues": true,
+    "editor.suggest.showUsers": true,
+    "editor.suggest.showUnits": true,
+    "editor.suggest.showTypeParameters": true,
+    "editor.suggest.showStructs": true,
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.showReferences": true,
+    "editor.suggest.showProperties": true,
+    "editor.suggest.showOperators": true,
+    "editor.hover.enabled": false,
+    "editor.suggest.showStatusBar": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+}

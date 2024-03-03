@@ -7,7 +7,7 @@ export const Title = ({ children }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: 'open-sans',
+    fontFamily: "open-sans",
     fontSize: 24,
     fontWeight: "bold",
     color: "#fff",
