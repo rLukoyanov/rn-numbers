@@ -3,7 +3,7 @@ import { Title } from "../components/ui/Title";
 import { PramiryButton } from "../components/ui/PramiryButton";
 import colors from "../constants/colors";
 
-export const GameOverScreen = () => {
+export const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
   return (
     <View style={styles.screenContainer}>
       <Title>GAME OVER</Title>
@@ -14,10 +14,10 @@ export const GameOverScreen = () => {
         />
       </View>
       <Text style={styles.text}>
-        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
-        guess the number <Text style={styles.highlight}>Y</Text>.
+        Your phone needed <Text style={styles.highlight}>{roundsNumber}</Text> rounds to
+        guess the number <Text style={styles.highlight}>{userNumber}</Text>.
       </Text>
-      <PramiryButton>Start new Game</PramiryButton>
+      <PramiryButton onPress={onStartNewGame}>Start new Game</PramiryButton>
     </View>
   );
 };
