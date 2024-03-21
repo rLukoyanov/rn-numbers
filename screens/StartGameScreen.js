@@ -5,6 +5,8 @@ import {
   View,
   Alert,
   useWindowDimensions,
+  KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
 
 import { PramiryButton } from "../components/ui/PramiryButton";
@@ -49,32 +51,37 @@ export const StartGameScreen = ({ onPickedNumber }) => {
   const marginTopDistance = height < 400 ? 30 : 100;
 
   return (
-    <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
-      <Title>Guess My Nmber</Title>
-      <Card>
-        <InstructionText>Enter a Number</InstructionText>
-        <TextInput
-          style={styles.numberInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          autoCapitalize="none"
-          autoCorrect={false}
-          value={enteredNumber}
-          onChangeText={numberInputHandler}
-        />
-        <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <PramiryButton onPress={resetInputHandler}>Reset</PramiryButton>
-          </View>
-          <View style={styles.buttonContainer}>
-            <PramiryButton onPress={confirmInputHandler}>Confirm</PramiryButton>
-          </View>
+    <ScrollView style={{ flex: 1 }}>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+        <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
+          <Title>Guess My Nmber</Title>
+          <Card>
+            <InstructionText>Enter a Number</InstructionText>
+            <TextInput
+              style={styles.numberInput}
+              maxLength={2}
+              keyboardType="number-pad"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={enteredNumber}
+              onChangeText={numberInputHandler}
+            />
+            <View style={styles.buttonsContainer}>
+              <View style={styles.buttonContainer}>
+                <PramiryButton onPress={resetInputHandler}>Reset</PramiryButton>
+              </View>
+              <View style={styles.buttonContainer}>
+                <PramiryButton onPress={confirmInputHandler}>
+                  Confirm
+                </PramiryButton>
+              </View>
+            </View>
+          </Card>
         </View>
-      </Card>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
-
 
 const styles = StyleSheet.create({
   rootContainer: {
