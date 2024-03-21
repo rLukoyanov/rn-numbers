@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { StyleSheet, TextInput, View, Alert, Text } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Alert,
+  useWindowDimensions,
+} from "react-native";
 
 import { PramiryButton } from "../components/ui/PramiryButton";
 import colors from "../constants/colors";
@@ -9,6 +15,7 @@ import { InstructionText } from "../components/ui/InstructionText";
 
 export const StartGameScreen = ({ onPickedNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
+  const { width, height } = useWindowDimensions();
 
   const numberInputHandler = (enteredText) => {
     setEnteredNumber(enteredText);
@@ -39,8 +46,10 @@ export const StartGameScreen = ({ onPickedNumber }) => {
     setEnteredNumber("");
   };
 
+  const marginTopDistance = height < 400 ? 30 : 100;
+
   return (
-    <View style={styles.rootContainer}>
+    <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
       <Title>Guess My Nmber</Title>
       <Card>
         <InstructionText>Enter a Number</InstructionText>
@@ -66,10 +75,10 @@ export const StartGameScreen = ({ onPickedNumber }) => {
   );
 };
 
+
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    marginTop: 100,
     alignItems: "center",
   },
 
